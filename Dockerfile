@@ -41,7 +41,9 @@ RUN BUILD_DEPS=" \
 # Copy scripts
 COPY scripts/import-gpg.sh /usr/bin/import-gpg
 COPY scripts/bm-run-batch.sh /usr/bin/bm-run-batch
+COPY scripts/run-cron.sh /usr/bin/run-cron
+COPY scripts/bm-run-as-cron.sh /usr/bin/bm-run-as-cron
 
-RUN chmod +x /usr/bin/import-gpg /usr/bin/bm-run-batch
+RUN chmod +x /usr/bin/import-gpg /usr/bin/bm-run-batch /usr/bin/run-cron /usr/bin/bm-run-as-cron
 
-CMD ["/usr/bin/bm-run-batch"]
+CMD ["/usr/bin/bm-run-as-cron"]
